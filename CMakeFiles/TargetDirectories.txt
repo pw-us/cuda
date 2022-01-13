@@ -1,0 +1,4 @@
+/root/xmrig-cuda/build/CMakeFiles/rebuild_cache.dir
+/root/xmrig-cuda/build/CMakeFiles/edit_cache.dir
+/root/xmrig-cuda/build/CMakeFiles/xmrig-cuda.dir
+/root/xmrig-cuda/build/CMakeFiles/xmrig-cu.dir

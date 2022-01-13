@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /root/xmrig-cuda/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_55e86/fast"
+/usr/bin/make -f CMakeFiles/cmTC_55e86.dir/build.make CMakeFiles/cmTC_55e86.dir/build
+make[1]: Entering directory '/root/xmrig-cuda/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_55e86.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fPIC    -o CMakeFiles/cmTC_55e86.dir/CheckSymbolExists.c.o   -c /root/xmrig-cuda/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_55e86
+/usr/local/lib/python2.7/dist-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55e86.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC     -rdynamic CMakeFiles/cmTC_55e86.dir/CheckSymbolExists.c.o  -o cmTC_55e86 
+CMakeFiles/cmTC_55e86.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_55e86.dir/build.make:86: recipe for target 'cmTC_55e86' failed
+make[1]: *** [cmTC_55e86] Error 1
+make[1]: Leaving directory '/root/xmrig-cuda/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_55e86/fast' failed
+make: *** [cmTC_55e86/fast] Error 2
+
+File /root/xmrig-cuda/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /root/xmrig-cuda/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_04704/fast"
+/usr/bin/make -f CMakeFiles/cmTC_04704.dir/build.make CMakeFiles/cmTC_04704.dir/build
+make[1]: Entering directory '/root/xmrig-cuda/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_04704.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_04704.dir/CheckFunctionExists.c.o   -c /usr/local/lib/python2.7/dist-packages/cmake/data/share/cmake-3.12/Modules/CheckFunctionExists.c
+Linking C executable cmTC_04704
+/usr/local/lib/python2.7/dist-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04704.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_04704.dir/CheckFunctionExists.c.o  -o cmTC_04704 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_04704.dir/build.make:86: recipe for target 'cmTC_04704' failed
+make[1]: *** [cmTC_04704] Error 1
+make[1]: Leaving directory '/root/xmrig-cuda/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_04704/fast' failed
+make: *** [cmTC_04704/fast] Error 2
+
+
